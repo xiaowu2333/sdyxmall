@@ -1,0 +1,16 @@
+{
+  "id": "1621786",
+  "name": "苏打优选",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6170848",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    }
+  ]
+}
