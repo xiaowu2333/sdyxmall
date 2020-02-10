@@ -8,18 +8,49 @@
       class="my-swipe"
       :loop="false"
       @change="onChange"
+      v-if="Object.keys(chooseSku).length == 0"
     >
       <van-swipe-item
         v-for="(item,index) in defaultSku.imgUrls"
         :key="index"
       >
-        <van-image :src="item" />
+        <van-image
+          :src="item"
+          width="100%"
+          height="100%"
+        />
       </van-swipe-item>
       <div
         class="custom-indicator"
         slot="indicator"
       >
         <span v-if="defaultSku"> {{ current+1}}/{{defaultSku.imgUrls.length}}</span>
+      </div>
+
+    </van-swipe>
+
+    <van-swipe
+      :autoplay="3000"
+      class="my-swipe"
+      :loop="false"
+      @change="onChange"
+      v-else
+    >
+      <van-swipe-item
+        v-for="(item,index) in chooseSku.imgUrls"
+        :key="index"
+      >
+        <van-image
+          :src="item"
+          width="100%"
+          height="100%"
+        />
+      </van-swipe-item>
+      <div
+        class="custom-indicator"
+        slot="indicator"
+      >
+        <span v-if="chooseSku"> {{ current+1}}/{{chooseSku.imgUrls.length}}</span>
       </div>
 
     </van-swipe>
@@ -68,6 +99,9 @@ export default {
     ...mapGetters("product", {
       payFirstUrl: "getPayFirstUrl",
       defaultSku: "getDefaultSku"
+    }),
+    ...mapState("product", {
+      chooseSku: "chooseSku"
     })
   }
 };

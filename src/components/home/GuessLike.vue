@@ -7,6 +7,7 @@
       <li
         v-for="item in this.$store.state.home.guessLikeList"
         :key="item.productId"
+        @click="toDetail(item.productId)"
       >
         <div class="wrap-img"><img
             class="icon-img"
@@ -78,6 +79,11 @@ export default {
       } else {
         return false;
       }
+    },
+    toDetail(id) {
+      this.$router.push({
+        path: `/product/${id}`
+      });
     }
   },
   filters: {
@@ -95,30 +101,36 @@ export default {
 <style lang="scss" scoped>
 .guessLike {
   background-color: #fff;
+
   .title {
     height: 104px;
     text-align: center;
+
     h3 {
       font-weight: normal;
       line-height: 104px;
       font-size: 28px;
     }
   }
+
   .goods_list {
     display: flex;
     width: 100%;
     flex-flow: wrap;
     box-sizing: border-box;
     padding-left: 30px;
+
     li {
       flex: 0 0 calc(50% - 30px);
       margin-right: 30px;
       overflow: hidden;
       margin-bottom: 30px;
+
       .wrap-img {
         position: relative;
         background: rgb(244, 244, 244);
         margin-bottom: 20px;
+
         .icon-img {
           position: absolute;
           top: 10px;
@@ -130,17 +142,21 @@ export default {
           width: 100%;
         }
       }
+
       .p-wrap {
         display: flex;
         flex-wrap: wrap;
+
         span {
           margin-right: 10px;
+
           img {
             width: 40px;
             height: 24px;
             transform: translateY(6px);
           }
         }
+
         p {
           overflow: hidden;
           text-overflow: ellipsis;
@@ -166,6 +182,7 @@ export default {
           font-size: 28px;
           margin-right: 10px;
         }
+
         .before_price {
           color: rgb(189, 192, 197);
           font-size: 20px;

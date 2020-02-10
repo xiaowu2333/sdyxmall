@@ -22,17 +22,14 @@
           :key="itemPro.productId"
           @click.capture.stop="toDetail(itemPro.productId)"
         >
-          <div class="wrap-img"><img
+          <div class="wrap-img">
+            <van-image
               class="icon-img"
+              lazy-load
               v-if="iconImg(itemPro.labels)"
               src="https://mall.s.maizuo.com/4ebdc8588a09dd0f87a7982d5f5eb78e.jpg"
               alt=""
-            >
-            <!-- <img
-              class="main-img"
-              :src="itemPro.sku.imgUrl"
-              alt=""
-            > -->
+            />
 
             <van-image
               width="100"
@@ -130,52 +127,63 @@ export default {
 <style lang="scss" scoped>
 .content {
   box-sizing: border-box;
+
   .kindsList {
     background: #fff;
     margin-bottom: 20px;
+
     .title_content {
       padding: 0 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       height: 104px;
+
       h2 {
         color: #191a1b;
         font-weight: normal;
         font-size: 34px;
       }
+
       span {
         color: #797d82;
         font-size: 26px;
+
         &.iconfont {
           margin-left: 10px;
           font-size: 26px;
         }
       }
     }
+
     .img_wrap {
       padding: 0 30px;
       width: 100%;
       margin-bottom: 20px;
+
       img {
         width: 100%;
       }
     }
+
     .goods_list {
       display: flex;
       width: 100%;
       flex-flow: wrap;
       box-sizing: border-box;
       padding-left: 30px;
+
       li {
         flex: 0 0 calc(33.33% - 30px);
         margin-right: 30px;
         overflow: hidden;
         margin-bottom: 30px;
+
         .wrap-img {
           position: relative;
           background: rgb(244, 244, 244);
           margin-bottom: 20px;
+
           .icon-img {
             position: absolute;
             top: 10px;
@@ -186,10 +194,12 @@ export default {
           .main-img {
             width: 100%;
           }
+
           .img-tag {
             position: absolute;
             left: 0;
             bottom: 0;
+
             span {
               color: #fff;
               font-size: 14px;
@@ -198,15 +208,19 @@ export default {
             }
           }
         }
+
         .p-wrap {
           display: flex;
+
           span {
             margin-right: 10px;
+
             img {
               width: 40px;
               height: 26px;
             }
           }
+
           p {
             overflow: hidden;
             text-overflow: ellipsis;
@@ -227,6 +241,7 @@ export default {
             font-size: 28px;
             margin-right: 10px;
           }
+
           .before_price {
             color: rgb(189, 192, 197);
             font-size: 20px;

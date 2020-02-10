@@ -5,6 +5,7 @@ import store from './store'
 import 'lib-flexible'
 import 'animate.css'
 import axios from "axios";
+import './assets/font_1621786_vz4iuu69x7e/iconfont.css';
 import {
   Lazyload
 } from 'vant';

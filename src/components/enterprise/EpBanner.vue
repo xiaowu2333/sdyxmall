@@ -6,12 +6,12 @@
       indicator-color="white"
     >
       <van-swipe-item
-        v-for="item in this.$store.state.home.swiperBanner"
+        v-for="item in this.$store.state.enterprise.banner"
         :key="item.bannerId"
       >
         <van-image
           width="100%"
-          height="210"
+          height="165"
           lazy-load
           :src="item.imgUrl"
         />
@@ -34,7 +34,6 @@ export default {
 <style lang="scss" scoped>
 .my-swipe .van-swipe-item {
   height: 420px;
-
   img {
     width: 100%;
   }

@@ -18,7 +18,12 @@ const routes = [{
   },
   {
     path: '/center',
-    component: () => import('../views/Center.vue')
+    component: () => import('../views/Center.vue'),
+
+  },
+  {
+    path: '/center/setting',
+    component: () => import('../views/center/setting.vue'),
   },
   {
     path: '/cart',
@@ -31,6 +36,14 @@ const routes = [{
   {
     path: '/product/:id',
     component: () => import('../views/Product.vue')
+  },
+  {
+    path: '/login',
+    component: () => import('../views/Login.vue')
+  },
+  {
+    path: '/register',
+    component: () => import('../views/Register.vue')
   }
 ]
 

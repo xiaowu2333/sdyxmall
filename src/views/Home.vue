@@ -135,26 +135,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.backTop {
-  width: 100px;
-  height: 100px;
-  position: fixed;
-  z-index: 999;
-  right: 20px;
-  bottom: 110px;
-
-  img {
+.home {
+  .backTop {
     width: 100px;
     height: 100px;
-  }
-}
+    position: fixed;
+    z-index: 999;
+    right: 20px;
+    bottom: 110px;
 
-.posEle {
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-}
-.fenge {
-  height: 162px;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  .posEle {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+  }
+
+  .fenge {
+    height: 162px;
+  }
 }
 </style>
